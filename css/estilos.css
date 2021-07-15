@@ -1,0 +1,666 @@
+@import url(conocenos.css);
+@import url(servicios.css);
+@import url(proyectos.css);
+@import url(contacto.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Cuando demos border o padding que queden en este modelo de caja*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: rgb(233, 233, 233);
+   }
+/*estilos para la barra de scroll*/
+body::-webkit-scrollbar {
+width: 7px;
+background: rgb(114, 113, 113);
+}
+
+body::-webkit-scrollbar-thumb {
+background: rgb(0, 0, 0);
+border-radius: 10px;
+}
+/*estilos para la barra de scroll*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.contenedor {
+    width: 100%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.container {
+    width: 100%;
+       margin: auto;
+   }
+   /*---------CAJAS CON FLEXBOX----------- */
+   /* flex-direction row-reverse: // nos permite cambiar en reversa el orden de las cajas. Por ejemplo si hay 1,2,3,4... se pocisionan 4,3,2,1*/
+   /* flex-direction: // column nos permite ordenar como un display block. Y column-reverse nos vuelve a acomodar todo en reversa  */
+   /* Flex-wrap: wrap // nos avienta los elementos hacia abajo cuando los items superan el ancho del contenedor */
+   /* Flex-wrap: no-wrap // no respeta el ancho puesto por css y siempre respeta al contenedor. */
+   /* justify-content: flex-end // nos pocisiona hacia la derecha los elementos*/
+   /* justify-content: center // nos centra los elementos */
+   /* justify-content: space-around // nos distribuye los elmentos por toda la caja contenedora sin importar el ancho de los items */
+   /* justify-content: space-between // nos quita los margenes del primer y ultimo elemento. También nos los distribuye por toda la caja contenedora */
+   /* aling-items: flex-end // nos pocisiona todos los items hasta el final */
+   /* aling-items: center // nos centra los elementos dentro del contenedor tanto vertical como horizontalmente */
+   /* aling-items: strech // hace que los elementos abarquen el 100 de alto del contenedro. Para ello deben de tener los items un height auto */
+   /* aling-items: baseline // nos pocisiona todos los elementos de ancho en base a la fuente. */
+   /* LA PROPIEDAD ALIGN ITEMS SOLO NOS AYUDA A POCISIONAR LOS ELEMENTOS DE LA FILA. ALIGN-CONTENT NOS POCISONA EL GRUPO COMPLETO EN CASO DE QUE HAYA FILAS ECHAS CON WRAP QUE SE SALGAN DEL CONTEENDOR. DE OTRO MODO NO SIRVE. Uno trabaja con items, y el otro por grupo */
+   /* align-content: center // nos quita el margen por defecto de los items y nos los junta automaticamente. NO nos los distribuye en la caja, si no que nos los agrupa. Solo se usa con varias filas*/
+   /* align-content: flex-end // cumple la misma teoría*/
+   /* align-content: space-beetwen // cumple la misma teoría */
+   /* align-content: space around // cumple la misma teoría */
+   /* En vez de usar Display:block es mejor flex-direction: column para trabajar con align-items, justify-content y align-content*/
+   /* ----------PROPIEDADES DE ELEMENTOS HIJOS (ITEMS) DENTRO DE FLEXBOX */
+   /* flex-basis: px // es un sinonimo del width sólo que es flexible. Abarca también la propiedad del hancho */
+   /* flex-grow // Permite que todas tomen el valor necesario para que todos los items abarquen del 100%. No respeta el width y se ledenomina el valor de "1". Si se le da "2" el segundo elemento crecerá ¿Por qué? Porque por defecto le pondrá un ancho para que siga abarcando el 100% del contenedor. Esto nos sirve para que su crecimiento sea más significativo de los demás. Para aplicarlo hay que seleccionar el item a desear */
+   /* flex-shrink // Es la misma teoría que flex-grwo pero en este caso, se va a encojer. */
+   /* flex: // te aplica los 3 conceptos anteriores mencionados */
+   /* order: // Nos permite ordenar de forma visual el css. Cambia la pocision de los elementos */
+   /* align-self: // contiene las mismas propiedades que los alig items, etc. pero alinea a un item y no al grupo */
+   .container--flex {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       align-items: center;
+   }
+                               
+   .column {
+       width: 100%;
+   }
+
+/*Estilos de texto*/
+
+.max-title, .sub-title, .mini-title {
+    margin-bottom: 15px;
+}
+
+.max-title {
+  font-size: 2em;
+  font-family: 'Cormorant SC', serif;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.sub-title {
+  font-size: 1.5em;
+  font-family: 'Cormorant SC', serif;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.mini-title {
+   font-size: 1.2em;
+   font-family: 'Cormorant SC', serif;
+   margin-bottom: 5px;
+   text-align: center;
+}
+
+.texto {
+   font-size: 1em;
+   font-family: 'Manrope', sans-serif;
+   margin-bottom: 5px;
+}
+/* <em></em> */
+.cursive  {
+   font-size: 1em;
+   font-family: 'Manrope', sans-serif;
+}
+/* <b></b> */
+.bold {
+   font-size: 1em;
+   font-family: 'Manrope', sans-serif;
+   color: rgb(0, 183, 255);
+}
+
+a {
+    font-family: 'Manrope', sans-serif;
+}
+
+.fieldset {
+   font-size: 1rem;
+   font-family: 'Manrope', sans-serif;
+}
+
+.legend {
+  font-size: 1em;
+  font-family: 'Manrope', sans-serif;
+}
+
+/*Estilos de texto*/
+/* Animacones de apertura */
+.animado {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.mostrarAbajo {
+    animation: mostrarArriba 1s;
+}
+
+.mostrarArriba {
+    animation: mostrarArriba 1s;
+}
+
+.mostrarIzquierda {
+    animation: mostrarArriba 1s;
+}
+
+.mostrarDerecha {
+    animation: mostrarArriba 1s;
+}
+
+
+@keyframes mostrarArriba {
+    0% {
+        transform: translateY(60px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes mostrarAbajo {
+    0% {
+        transform: translateY(-60px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes mostrarIzquierda {
+    0% {
+        transform: translateX(-60px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes mostrarDerecha {
+    0% {
+        transform: translateX(60px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Menu */
+
+header {
+    position: fixed;
+    z-index: 1;
+    color: #fff;
+    background: rgba(24, 207, 207, 0.925);
+    width: 100%;
+    height: 40px;
+}
+
+header input {
+    display: none;
+}
+
+header .max-title {
+    float: left;
+}
+
+header .max-title a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header label {
+    padding: 5px;
+    float: right;
+    margin: 3px 6px 0px 0px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+header label:hover {
+    background: #fff;
+    color: rgba(24, 207, 207, 0.925);
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 20px;
+}
+
+header .menu {
+    position: absolute;
+    background: rgba(24, 207, 207, 0.925);
+    top: 40px;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: 1;
+    transition: all .5s;
+    transform: translateX(-100%);
+}
+
+#menu-bar:checked ~ .menu {
+    transform: translateX(0%);
+}
+
+header .menu li {
+   border-bottom: 1px solid #fff;
+   padding: 10px;
+}
+
+header .menu li:first-child {
+    background: rgb(0, 225, 255);
+}
+
+header .menu li:first-child:hover {
+    background: rgb(0, 225, 255);
+}
+
+header .menu .menu--link {
+    text-decoration: none;
+    color: #fff;
+}
+
+header .menu .menu--link-select {
+    background: linear-gradient(to left, rgba(255,255,255)30%, rgba(24, 207, 207, 0.925));
+}
+
+header .menu li:hover {
+    background: linear-gradient(to left, rgba(255,255,255)30%, rgba(24, 207, 207, 0.925));
+}
+
+header .menu .fa-facebook, .fa-instagram, .fa-twitter {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 20px;
+    padding: 3px;
+}
+
+/* Banner general */
+#banner {
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+}
+
+#banner .banner__img {
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
+}
+
+#banner .banner__img::before {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.278), rgb(0, 0, 0, .6));
+}
+
+#banner .contenedor {
+   position: absolute;
+   bottom: 0;
+   top: 40px;
+   left: 0;
+   padding: 8px;
+   color: rgba(255, 255, 255, 0.774);
+}
+
+#banner .wave {
+    position: absolute;
+     bottom: 0px;
+    width: 100%;
+}
+
+/* Banner general */
+
+.banner__principal {
+    width: 100%;
+}
+
+/* slider de fotos */
+.banner__principal-slider {
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner__principal-slider ul {
+    padding: 0;
+    display: flex;
+    width: 500%; /*depende del número de imagenes*/
+
+    animation: slider 30s infinite alternate;
+}
+
+@keyframes slider {
+  0% { margin-left: 0%;}
+  10% {margin-left: 0%;}
+
+  15% {margin-left: -100%;}
+  25% {margin-left: -100%;}
+
+  30% {margin-left: -200%;}
+  40% {margin-left: -200%;}
+
+  45% {margin-left: -300%;}
+  55% {margin-left: -300%;}
+
+  60% {margin-left: -400%;}
+  70% {margin-left: -400%;}
+
+}
+
+.banner__principal-slider .slider-item {
+    width: 100%;
+    list-style: none;
+}
+
+.banner__principal-slider img {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    object-fit: cover;
+}
+/* Estilos index */
+
+.banner__principal {
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+}
+
+.banner__principal-img {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.banner__principal-img:before {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(rgba(255,255,255,0), rgba(0,0,0,1));
+}
+
+.contenedor--banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #fff;
+    width: 95%;
+    max-width: 1250px;
+    position: absolute;
+    top: 5%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    animation: slidein 3s;
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+
+.banner__principal .column--50 {
+    width: 100%;
+    margin: auto;
+    align-self: center;
+}
+
+.banner__principal .column--50:nth-child(2) {
+    border-top:1px solid rgb(0, 225, 255);
+    margin-top: 20px;
+}
+
+.banner__principal .column--50:nth-child(2) a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    background: rgba(24, 207, 207, 0.925);
+    padding: 2px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    transition: all .5s;
+}
+
+.banner__principal .column--50:nth-child(2) a:hover {
+    color: rgba(24, 207, 207, 0.925);
+    background: #fff;
+}
+
+/* footer */
+
+footer {
+    display: table;
+    width: 100%;
+    margin: auto;
+    color: #000;
+    background: linear-gradient(to bottom, rgb(233, 233, 233)30%, rgba(24, 207, 207, 0.925));
+    text-align: center;
+    padding: 5px;
+}
+
+footer .container--flex {
+    align-items: flex-start;
+}
+
+footer .footer__contacto {
+   display: block;
+}
+
+footer .footer__contacto span {
+    display: block;
+    margin-bottom: 5px;
+}
+/* 
+footer .footer__contacto span .fa-facebook, .fa-instagram, .fa-twitter {
+   padding: 0;
+   margin: 0;
+} */
+
+/* Estilos responsve */
+
+@media screen and (min-width:360px) {
+      
+   #banner .contenedor {
+    top: 85px;
+}
+ 
+ }
+ 
+ @media screen and (min-width:480px) {
+ 
+ .column--66 {
+     width: 49%;
+ }
+    
+   .column--33 {
+       width: 33%;
+   }
+
+   .column--50-25 {
+       width: 49%;
+       align-items: flex-start;
+   }
+
+   #banner .contenedor {
+       top: 130px;
+   }
+
+   footer .column--33:nth-child(3) {
+       color: #000;
+   }
+
+   footer .column--33:nth-child(3) .fa-twitter, .fa-instagram, .fa-facebook {
+       color: #000;
+   }
+
+
+ }
+ 
+ @media screen and (min-width:768px) {
+ 
+        .column--50-25 {
+            width: 24.9%;
+        }
+ 
+        .column--66 {
+         width: 33%;
+     }
+ 
+      .column--50 {
+            width: 49%;
+        } 
+
+    .contenedor--banner {
+        text-align: left;
+    }
+
+    .contenedor--banner .max-title {
+        font-size: 3em;
+    }
+
+    .contenedor--banner .sub-title {
+        font-size: 2.5em;
+    }
+
+    .contenedor--banner .texto {
+        font-size: 1.4em;
+    }
+
+    .banner__principal .column--50 {
+        width: 49%;
+        text-align: left;
+    }
+
+    .banner__principal .column--50:nth-child(2) a {
+        font-size: 1em;
+    }
+
+     .banner__principal .column--50:first-child {
+         border-top: none;
+         border-right:1px solid rgba(24, 207, 207, 0.925);
+         padding: 10px;
+     }
+
+     .contenedor--banner .column--50:nth-child(2) {
+         border: none;
+     }
+
+     #banner .contenedor {
+         text-align: center;
+         top: 180px;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         margin: auto;
+     }
+
+     #banner .contenedor .max-title {
+         font-size: 3em;
+     }
+
+     #banner .contenedor .texto {
+         font-size: 1.4em;
+     }
+ }
+ 
+    @media screen and (min-width:1024px) {
+ 
+     .column--66 {
+         width: 16%;
+     }
+
+     .menu ul {
+         display: flex;
+     }
+     
+   header .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+        background: transparent;
+    }
+
+    header .menu li:first-child {
+        display: none;
+    }
+
+    header .menu li {
+        height: auto;
+        list-style: none;
+        border-bottom: none;
+        align-self: center;
+        border-right: 1px solid rgb(255, 255, 255,.799);
+        height: 40px;
+        /*https://developer.mozilla.org/es/docs/Web/CSS/clip-path*/
+    }
+    
+    header .menu .menu--link-select {
+        background: linear-gradient(to bottom, rgba(255,255,255,.3)30%, rgba(24, 207, 207, 0.925));
+    }
+
+    header .menu .fa-facebook, .fa-instagram, .fa-twitter {
+        align-self: center;
+        padding: 0;
+    }
+
+    header .menu li:hover {
+        background: none;
+        background: linear-gradient(to bottom, rgba(255,255,255,.3)30%, rgba(24, 207, 207, 0.925));
+    }
+
+    header .fa-caret-square-down {
+        display: none;
+    }
+
+    #banner {
+        max-height: 550px;
+    }
+
+    #banner .contenedor {
+        top: 20%;
+    }
+ }
