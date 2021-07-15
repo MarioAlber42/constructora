@@ -1,0 +1,224 @@
+.conocenos {
+    width: 100%;
+    margin: auto;
+}
+
+.conocenos__presentacion {
+    width: 100%;
+    margin: auto;
+    padding: 8px;
+}
+
+.conocenos__presentacion img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    padding: 8px;
+}
+
+.conocenos__presentacion .column--50:nth-child(2) {
+    border-top: 1px solid rgb(255, 102, 0);
+}
+
+.conocenos__mision {
+    width: 97%;
+    margin: auto;
+    padding: 5px;
+    border-radius: 10px;
+    background: linear-gradient(to top, rgb(255, 102, 0, .689)30%, rgb(233, 233, 233)70%);
+    margin-bottom: 20px;
+}
+
+.conocenos__mision img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    padding: 8px;
+}
+
+.conocenos__mision .column--33:nth-child(2), .column--33:nth-child(3) {
+    color: #fff;
+}
+
+.conocenos__articles {
+    width: 100%;
+    margin: auto;
+}
+
+.conocenos__articles .article__item {
+    width: 97%;
+    margin: auto;
+    background: linear-gradient(to bottom, rgba(24, 207, 207, 0.925)90%, rgb(233, 233, 233));
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 10px;
+    color: rgb(253, 253, 253);
+    transition: all .5s;
+}
+
+
+.conocenos__articles .container--flex {
+    align-items: flex-start;
+ }
+
+.conocenos__articles .article__item:hover {
+    background: rgb(0, 225, 255, .9);
+    color: rgba(255,255,255, 0.999);
+}
+
+.conocenos__articles .article__item img {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.conocenos__video {
+    width: 98%;
+    margin: auto;
+    padding: 8px;
+}
+
+.conocenos__video video {
+    width: 100%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 2px 2px rgb(255, 102, 0, .7), 3px 3px rgba(0,0,0,.4);
+}
+
+.conocenos__clientes {
+    width: 100%;
+    margin: auto;
+}
+
+.conocenos__clientes .max-title {
+    border-bottom: 1px solid #000;
+    padding: 7px;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.conocenos__clientes .column--66 {
+    margin: auto;
+    margin-bottom: 15px;
+   align-self: center;
+}
+
+.conocenos__clientes .column--66 img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+/* slider de la sección de conocenos  */
+
+.conocenos__clientes {
+    margin: auto;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.clientes__principal-slider {
+    width: 100%;
+    height: 200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.clientes__principal-slider ul {
+    padding: 0;
+    display: flex;
+    width: 500%; /*depende del número de imagenes*/
+
+    animation: slider 30s infinite alternate;
+}
+
+@keyframes slider {
+  0% { margin-left: 0%;}
+  10% {margin-left: 0%;}
+
+  15% {margin-left: -100%;}
+  25% {margin-left: -100%;}
+
+  30% {margin-left: -200%;}
+  40% {margin-left: -200%;}
+
+  45% {margin-left: -300%;}
+  55% {margin-left: -300%;}
+
+  60% {margin-left: -400%;}
+  70% {margin-left: -400%;}
+
+}
+
+.clientes__principal-slider .clientes-item {
+    width: 90%;
+    list-style: none;
+}
+
+.clientes__principal-slider img {
+    width: 90%;
+    height: 150px;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/*  */
+
+@media screen and (min-width:360px) {
+ 
+}
+
+@media screen and (min-width:480px) {
+
+    .conocenos__mision img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .conocenos__mision .container--flex {
+        align-items: flex-start;
+    }
+
+    .conocenos__mision .column--33 {
+        padding: 2px;
+    }
+
+    .conocenos__mision .column--33:nth-child(2) {
+        color: #000;
+    }
+
+    .conocenos__mision .column--33:nth-child(3) {
+        color: #000;
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    .conocenos__presentacion .column--50:nth-child(2) {
+        border-top: none;
+        border-left: 1px solid rgb(255, 102, 0);
+        padding: 8px;
+    }
+
+    .conocenos__presentacion img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .conocenos__mision img {
+        width: 250px;
+        height: 250px;
+    }
+
+}
+
+   @media screen and (min-width:1024px) {
+
+}
